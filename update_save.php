@@ -1,10 +1,9 @@
 <?php
 
-$userN  = $_GET["thisUser"];
-$passW  = $_GET["thisPass"];
-
-
-
+$userN=$_GET["thisUser"];
+$passW=$_GET["thisPass"];
+$userId=$_GET["thisId"];
+$userS=$_GET["thisStatus"];
 ////specifying the credentials for connection
 //$servername = "192.168.254.100";
 $servername = "localhost";
@@ -19,10 +18,12 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "update  studentInfo set studentPassword= '".$passW."' where studentName = '".$userN."'";
+$sql = "update  studentinfo set studentPassword= '".$passW."' ,studentName='".$userN."',studentStatus='".$userS."' where id='".$userId."'";
 
 if ($conn->query($sql) === TRUE) {
-  echo " record  successfully";
+  $query = "SELECT * FROM samplecraud";
+
+echo"updated successfully";
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
