@@ -22,10 +22,12 @@ if ($conn->connect_error) {
 $sql = "delete from studentInfo  where studentName = '".$userN."'";
 
 if ($conn->query($sql) === TRUE) {
-  echo " record deleted successfully";
+  echo " <h2>Record deleted successfully!</h2>";
+  include("display.php");
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
+  
+$conn->close();   
 }
 
-$conn->close();
 ?>

@@ -44,7 +44,7 @@
            
            
             <div class="tab-pane fade" id="delete" role="tabpanel" aria-labelledby="pills-contact-tab">
-            <form method='delete' style=""class="col-sm-4" action='delete.php'>
+            <form method='delete'  style="border-radius:10px;"class="col-sm-4 border border-primary"action='delete.php'>
              <div class="form-group">  
                  <label for="exampleInputEmail1"> Student Name</label>  
                     <input class="form-control"type='text' name='thisUser'>

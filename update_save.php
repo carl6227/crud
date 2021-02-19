@@ -21,12 +21,14 @@ if ($conn->connect_error) {
 $sql = "update  studentinfo set studentPassword= '".$passW."' ,studentName='".$userN."',studentStatus='".$userS."' where id='".$userId."'";
 
 if ($conn->query($sql) === TRUE) {
-  $query = "SELECT * FROM samplecraud";
+  $query = "SELECT * FROM studentinfo";
+  include("display.php");
 
-echo"updated successfully";
+echo"<h2>updated successfully</h2>";
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
+  $conn->close();
 }
 
-$conn->close();
+
 ?>

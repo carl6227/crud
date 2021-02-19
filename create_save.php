@@ -20,10 +20,12 @@ $sql = "INSERT INTO studentinfo(studentName, studentPassword, studentStatus)
 VALUES ('".$userN."', '".$passW."', 'Active')";
 
 if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
+  echo " <H2>New record created successfully! </H2>";
+  include("display.php");
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
+  $conn->close();
 }
 
-$conn->close();
+
 ?>

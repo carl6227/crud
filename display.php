@@ -27,7 +27,7 @@ include("header.php");
 include("footer.php");
 $sql = "SELECT * FROM studentInfo";
 
-echo '<table class="table" > 
+echo ' <div class="col-sm-8"><table class="table" > 
 <thead class="thead-dark">
   <tr > 
       <td scope="col"> <strong>Student ID </strong></td> 
@@ -35,7 +35,7 @@ echo '<table class="table" >
       <td scope="col"><strong> Student Passwords </strong></td> 
       <td scope="col"><strong> Student Status </strong></td> 
       </thead> 
-  </tr>';
+  </tr> </div>';
       
       if ($result = $conn->query($sql)) {
         while ($row = $result->fetch_assoc()) {
