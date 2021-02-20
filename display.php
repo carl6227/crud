@@ -25,7 +25,7 @@ if ($conn->connect_error) {
 // }
 include("header.php");
 include("footer.php");
-$sql = "SELECT * FROM studentInfo";
+$queryStudentInfo = "SELECT * FROM studentInfo";
 
 echo ' <div class="col-sm-8" style="margin-left:20px">
 <table class="table" > 
@@ -39,9 +39,9 @@ echo ' <div class="col-sm-8" style="margin-left:20px">
   </tr> </thead> 
    </div>';
       
-      if ($result = $conn->query($sql)) {
+      if ($result = $conn->query($queryStudentInfo)) {
         while ($row = $result->fetch_array()) {
-            $id = $row["studentId"];
+            $id = $row["id"];
             $name = $row["studentName"];
             $password = $row["studentPassword"];
             $status = $row["studentStatus"];

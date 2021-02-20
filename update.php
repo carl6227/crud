@@ -5,13 +5,12 @@
   <p class="lead">You can update specific Student Information by its id then set new Name, Password and Status.</p>
   <hr class="my-4">
   <div class="row">
-    <div class="col-m-12">
-         <form method='get' style="border-radius:10px;"class="col-sm border border-primary" id="updates" action='update_save.php'>
-                 
+    <div class="col-l">
+         <form method='post' style="border-radius:10px;"class="col-sm border border-primary" id="updates" action='update_save.php'>
                     <div class="form-group">  
                     <label  for="exampleInputEmail1">Student ID</label>
                      <input class="form-control" type='number' name='thisId'>
-                    </div> 
+                      </div> 
              
                     <div class="form-group">  
                     <label  for="exampleInputEmail1">New student Name</label>
