@@ -4,6 +4,11 @@
         <img src="https://image.freepik.com/free-vector/cheerful-college-students-with-books-backpacks_179970-391.jpg"style="width:80%" alt="">
        </div>
        <div class="col-sm">
+       <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    
+  
+ </div>
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#create" role="tab" aria-controls="pills-home" aria-selected="true">Create New User</a>
@@ -39,10 +44,6 @@
                 </form>
 
             </div>
-
-
-           
-           
             <div class="tab-pane fade" id="delete" role="tabpanel" aria-labelledby="pills-contact-tab">
             <form method='delete'  style="border-radius:10px;"class="col-sm-4 border border-primary"action='delete.php'>
              <div class="form-group">  
@@ -55,11 +56,10 @@
             </form>
          </div>
             <div class="tab-pane fade" id="display" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <form method='get' action='display.php'>
-                    <input class="btn btn-success" type='submit' value='display'>
-                </form>
+                <?php include("display.php")?>
             </div>
            
+    </div>
     </div>
     </div>
    <?php include("footer.php")?>

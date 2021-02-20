@@ -6,7 +6,7 @@
   <hr class="my-4">
   <div class="row">
     <div class="col-m-12">
-         <form method='get' style="border-radius:10px;"class="col-sm-12 border border-primary" style=""class="col-sm-4" id="updates" action='update_save.php'>
+         <form method='get' style="border-radius:10px;"class="col-sm border border-primary" id="updates" action='update_save.php'>
                  
                     <div class="form-group">  
                     <label  for="exampleInputEmail1">Student ID</label>

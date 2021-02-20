@@ -7,7 +7,7 @@ $passW  = $_GET["thisPass"];
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "patrickDb";
+$dbname = "patrickdb";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -20,7 +20,7 @@ $sql = "INSERT INTO studentinfo(studentName, studentPassword, studentStatus)
 VALUES ('".$userN."', '".$passW."', 'Active')";
 
 if ($conn->query($sql) === TRUE) {
-  echo " <H2>New record created successfully! </H2>";
+  echo " <script> alert('New record successfully added')</script>";
   include("display.php");
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;

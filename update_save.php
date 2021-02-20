@@ -9,7 +9,7 @@ $userS=$_GET["thisStatus"];
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "patrickDb";
+$dbname = "patrickdb";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -18,11 +18,11 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "update  studentinfo set studentPassword= '".$passW."' ,studentName='".$userN."',studentStatus='".$userS."' where id='".$userId."'";
+$sql = "update  studentinfo set studentPassword= '".$passW."' ,studentName='".$userN."',studentStatus='".$userS."' where studentId='".$userId."'";
 
 if ($conn->query($sql) === TRUE) {
   $query = "SELECT * FROM studentinfo";
-  include("display.php");
+  include("<script> alert('Record successfully updated')</script>");
 
 echo"<h2>updated successfully</h2>";
 } else {

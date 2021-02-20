@@ -10,7 +10,7 @@ $userN  = $_GET["thisUser"];
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "patrickDb";
+$dbname = "patrickdb";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -22,7 +22,7 @@ if ($conn->connect_error) {
 $sql = "delete from studentInfo  where studentName = '".$userN."'";
 
 if ($conn->query($sql) === TRUE) {
-  echo " <h2>Record deleted successfully!</h2>";
+  echo " <script> alert(' Record successfully deleted')</script>";
   include("display.php");
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;

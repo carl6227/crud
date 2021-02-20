@@ -7,7 +7,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "patrickDb";
+$dbname = "patrickdb";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -27,28 +27,30 @@ include("header.php");
 include("footer.php");
 $sql = "SELECT * FROM studentInfo";
 
-echo ' <div class="col-sm-8"><table class="table" > 
+echo ' <div class="col-sm-8" style="margin-left:20px">
+<table class="table" > 
 <thead class="thead-dark">
   <tr > 
       <td scope="col"> <strong>Student ID </strong></td> 
       <td scope="col"> <strong>Student Names </strong></td> 
       <td scope="col"><strong> Student Passwords </strong></td> 
       <td scope="col"><strong> Student Status </strong></td> 
-      </thead> 
-  </tr> </div>';
+     
+  </tr> </thead> 
+   </div>';
       
       if ($result = $conn->query($sql)) {
-        while ($row = $result->fetch_assoc()) {
-            $field1name = $row["id"];
-            $field2name = $row["studentName"];
-            $field3name = $row["studentPassword"];
-            $field4name = $row["studentStatus"];
+        while ($row = $result->fetch_array()) {
+            $id = $row["studentId"];
+            $name = $row["studentName"];
+            $password = $row["studentPassword"];
+            $status = $row["studentStatus"];
      
             echo '<thead class="thead-dark"><tr "> 
-                      <td>'.$field1name.'</td> 
-                      <td>'.$field2name.'</td> 
-                      <td>'.$field3name.'</td> 
-                      <td>'.$field4name.'</td> 
+                      <td>'.$id.'</td> 
+                      <td>'.$name.'</td> 
+                      <td>'.$password.'</td> 
+                      <td>'.$status.'</td> 
                       
                   </tr>  </thead> ';
         }
